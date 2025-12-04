@@ -229,6 +229,18 @@ function addAnimationClasses() {
         feature.style.transitionDelay = `${index * 0.1}s`;
     });
     
+    // Testimonials
+    document.querySelectorAll('.testimonial-card').forEach((card, index) => {
+        card.classList.add('animate-on-scroll');
+        card.style.transitionDelay = `${index * 0.1}s`;
+    });
+    
+    // FAQ categories
+    document.querySelectorAll('.faq-category').forEach((category, index) => {
+        category.classList.add('animate-on-scroll');
+        category.style.transitionDelay = `${index * 0.1}s`;
+    });
+    
     // Section headers
     document.querySelectorAll('.section-header').forEach(header => {
         header.classList.add('animate-on-scroll');
@@ -239,6 +251,39 @@ function addAnimationClasses() {
         observer.observe(el);
     });
 }
+
+// ============================================
+// FAQ Link Handling (scroll + auto-open category)
+// ============================================
+document.querySelectorAll('[data-faq-link]').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetCategory = document.querySelector(targetId);
+        
+        if (targetCategory) {
+            // Close all other FAQ categories first
+            document.querySelectorAll('.faq-category[open]').forEach(cat => {
+                if (cat !== targetCategory) {
+                    cat.open = false;
+                }
+            });
+            
+            // Open the target category
+            targetCategory.open = true;
+            
+            // Scroll to the FAQ category
+            const headerHeight = header.offsetHeight;
+            const targetPosition = targetCategory.getBoundingClientRect().top + window.scrollY - headerHeight - 20;
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
 
 // ============================================
 // Modal Handling

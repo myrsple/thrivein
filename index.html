@@ -69,7 +69,7 @@
                         <span class="hero__title-line">Helping expats</span>
                         <span class="hero__title-line hero__title-line--accent">thrive in Czechia.</span>
                     </h1>
-                    <p class="hero__subtitle">We get individuals set up in the Czech Republic since 2019.</p>
+                    <p class="hero__subtitle">We get individuals set up in the Czech Republic since 2019<br><span class="hero__flag">🇨🇿</span></p>
                     <div class="hero__cta">
                         <a href="#contact" class="btn btn--primary">Get started</a>
                         <a href="#services" class="btn btn--secondary">View services</a>
@@ -109,11 +109,11 @@
                                 <polyline points="10 9 9 9 8 9"></polyline>
                             </svg>
                         </div>
-                        <h3 class="service-card__title">Need a visa for Czechia?</h3>
+                        <h3 class="service-card__title">How to get a Czech visa?</h3>
                         <p class="service-card__description">
-                            Are you planning on being self-employed or running a small business? Contact us for help with the necessary documentation and visa application.
+                            Planning on staying longer or working in Czechia? We'll help you prep the necessary documentation.
                         </p>
-                        <a href="#contact" class="service-card__link">
+                        <a href="#faq-visa" class="service-card__link" data-faq-link>
                             Learn more
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -132,11 +132,11 @@
                                 <path d="M6 8h.01M6 12h.01M10 8h8M10 12h8"></path>
                             </svg>
                         </div>
-                        <h3 class="service-card__title">How to submit my taxes?</h3>
+                        <h3 class="service-card__title">How do I submit my taxes?</h3>
                         <p class="service-card__description">
-                            Lost in the maze of Czech tax paperwork? Submit your documentation and we do the rest.
+                            Lost in the maze of Czech tax paperwork? We'll relieve you of the headache.
                         </p>
-                        <a href="#contact" class="service-card__link">
+                        <a href="#faq-taxes" class="service-card__link" data-faq-link>
                             Learn more
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -154,11 +154,11 @@
                                 <path d="M9 21V9"></path>
                             </svg>
                         </div>
-                        <h3 class="service-card__title">What is the Business License and where do I get it?</h3>
+                        <h3 class="service-card__title">Need a Business License (OSVČ)?</h3>
                         <p class="service-card__description">
-                            Starting to work in Czechia? Get in touch and we guide you through getting a Business License and signing up for social and health insurance.
+                            Starting to work in Czechia? We'll help you get a Business License and sign up for social and health insurance.
                         </p>
-                        <a href="#contact" class="service-card__link">
+                        <a href="#faq-license" class="service-card__link" data-faq-link>
                             Learn more
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -177,11 +177,11 @@
                                 <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                             </svg>
                         </div>
-                        <h3 class="service-card__title">Need someone by your side at the office?</h3>
+                        <h3 class="service-card__title">Need help at the office?</h3>
                         <p class="service-card__description">
-                            We go with you personally to the city office to help sort out bureaucracy fast. Avoid confusion and language barriers.
+                            Need personal assistance? We'll go to the city office with you to sort out bureaucracy fast.
                         </p>
-                        <a href="#contact" class="service-card__link">
+                        <a href="#faq-office" class="service-card__link" data-faq-link>
                             Learn more
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -321,6 +321,36 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- Testimonials -->
+            <div class="testimonials">
+                <h3 class="testimonials__title">What our clients say</h3>
+                <div class="testimonials__grid">
+                    <article class="testimonial-card">
+                        <p class="testimonial-card__quote">"[Placeholder: 1-2 sentence testimonial about how ThriveIn helped with their visa/setup process.]"</p>
+                        <div class="testimonial-card__author">
+                            <span class="testimonial-card__name">[Client name]</span>
+                            <span class="testimonial-card__role">[Job title / Country of origin]</span>
+                        </div>
+                    </article>
+                    
+                    <article class="testimonial-card">
+                        <p class="testimonial-card__quote">"[Placeholder: 1-2 sentence testimonial about the friendly service and fair pricing.]"</p>
+                        <div class="testimonial-card__author">
+                            <span class="testimonial-card__name">[Client name]</span>
+                            <span class="testimonial-card__role">[Job title / Country of origin]</span>
+                        </div>
+                    </article>
+                    
+                    <article class="testimonial-card">
+                        <p class="testimonial-card__quote">"[Placeholder: 1-2 sentence testimonial about office accompaniment or tax help.]"</p>
+                        <div class="testimonial-card__author">
+                            <span class="testimonial-card__name">[Client name]</span>
+                            <span class="testimonial-card__role">[Job title / Country of origin]</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
         </section>
 
         <!-- ============================================
@@ -423,6 +453,136 @@
                 </form>
             </div>
         </section>
+
+        <!-- ============================================
+             FAQ SECTION - For curious users and SEO
+             ============================================ -->
+        <section class="faqs" id="faqs">
+            <div class="faqs__container">
+                <div class="section-header">
+                    <span class="section-header__label">Got questions?</span>
+                    <h2 class="section-header__title">Frequently asked questions</h2>
+                </div>
+                
+                <div class="faqs__grid">
+                    <!-- Visa FAQs -->
+                    <details class="faq-category" id="faq-visa">
+                        <summary class="faq-category__title">
+                            <span class="faq-category__title-content">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                                Visa assistance
+                            </span>
+                        </summary>
+                        <div class="faq-category__items">
+                            <details class="faq-item">
+                                <summary class="faq-item__question">[Placeholder: FAQ question about visa types?]</summary>
+                                <p class="faq-item__answer">[Placeholder: Detailed answer about visa types available for self-employed, business owners, etc.]</p>
+                            </details>
+                            <details class="faq-item">
+                                <summary class="faq-item__question">[Placeholder: FAQ question about visa timeline?]</summary>
+                                <p class="faq-item__answer">[Placeholder: Detailed answer about how long the visa process typically takes.]</p>
+                            </details>
+                            <details class="faq-item">
+                                <summary class="faq-item__question">[Placeholder: FAQ question about required documents?]</summary>
+                                <p class="faq-item__answer">[Placeholder: Detailed answer about what documents are needed for visa application.]</p>
+                            </details>
+                        </div>
+                    </details>
+                    
+                    <!-- Tax FAQs -->
+                    <details class="faq-category" id="faq-taxes">
+                        <summary class="faq-category__title">
+                            <span class="faq-category__title-content">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                                    <path d="M6 8h.01M6 12h.01M10 8h8M10 12h8"></path>
+                                </svg>
+                                Tax filing
+                            </span>
+                        </summary>
+                        <div class="faq-category__items">
+                            <details class="faq-item">
+                                <summary class="faq-item__question">[Placeholder: FAQ question about tax deadlines?]</summary>
+                                <p class="faq-item__answer">[Placeholder: Detailed answer about Czech tax filing deadlines and penalties.]</p>
+                            </details>
+                            <details class="faq-item">
+                                <summary class="faq-item__question">[Placeholder: FAQ question about what expenses are deductible?]</summary>
+                                <p class="faq-item__answer">[Placeholder: Detailed answer about deductible expenses for freelancers/self-employed.]</p>
+                            </details>
+                            <details class="faq-item">
+                                <summary class="faq-item__question">[Placeholder: FAQ question about flat-rate vs actual expenses?]</summary>
+                                <p class="faq-item__answer">[Placeholder: Detailed answer about choosing between flat-rate and actual expense deductions.]</p>
+                            </details>
+                        </div>
+                    </details>
+                    
+                    <!-- Business License FAQs -->
+                    <details class="faq-category" id="faq-license">
+                        <summary class="faq-category__title">
+                            <span class="faq-category__title-content">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <path d="M3 9h18"></path>
+                                    <path d="M9 21V9"></path>
+                                </svg>
+                                Business license (Živnostenský list)
+                            </span>
+                        </summary>
+                        <div class="faq-category__items">
+                            <details class="faq-item">
+                                <summary class="faq-item__question">[Placeholder: FAQ question about who needs a živnostenský list?]</summary>
+                                <p class="faq-item__answer">[Placeholder: Detailed answer about when you need a business license in Czechia.]</p>
+                            </details>
+                            <details class="faq-item">
+                                <summary class="faq-item__question">[Placeholder: FAQ question about free vs regulated trades?]</summary>
+                                <p class="faq-item__answer">[Placeholder: Detailed answer about the difference between free and regulated trades.]</p>
+                            </details>
+                            <details class="faq-item">
+                                <summary class="faq-item__question">[Placeholder: FAQ question about health/social insurance?]</summary>
+                                <p class="faq-item__answer">[Placeholder: Detailed answer about registering for health and social insurance.]</p>
+                            </details>
+                        </div>
+                    </details>
+                    
+                    <!-- Office Accompaniment FAQs -->
+                    <details class="faq-category" id="faq-office">
+                        <summary class="faq-category__title">
+                            <span class="faq-category__title-content">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                                Office accompaniment
+                            </span>
+                        </summary>
+                        <div class="faq-category__items">
+                            <details class="faq-item">
+                                <summary class="faq-item__question">[Placeholder: FAQ question about which offices you accompany to?]</summary>
+                                <p class="faq-item__answer">[Placeholder: Detailed answer about the types of government offices covered.]</p>
+                            </details>
+                            <details class="faq-item">
+                                <summary class="faq-item__question">[Placeholder: FAQ question about what to bring?]</summary>
+                                <p class="faq-item__answer">[Placeholder: Detailed answer about documents to prepare before the visit.]</p>
+                            </details>
+                            <details class="faq-item">
+                                <summary class="faq-item__question">[Placeholder: FAQ question about language support?]</summary>
+                                <p class="faq-item__answer">[Placeholder: Detailed answer about translation/interpretation during the visit.]</p>
+                            </details>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- ============================================
@@ -455,6 +615,7 @@
                             <li><a href="#about">About us</a></li>
                             <li><a href="#how-it-works">How it works</a></li>
                             <li><a href="#contact">Contact</a></li>
+                            <li><a href="#faqs">FAQs</a></li>
                         </ul>
                     </div>
                     
@@ -497,6 +658,7 @@
                 <a href="#how-it-works">How it works</a>
                 <a href="#about">About</a>
                 <a href="#contact">Contact</a>
+                <a href="#faqs">FAQs</a>
             </nav>
             
             <div class="footer__bottom">
