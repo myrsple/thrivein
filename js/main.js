@@ -170,78 +170,19 @@ animateElements.forEach(el => observer.observe(el));
 // Contact Form Handling
 // ============================================
 if (contactForm) {
-    contactForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
+    contactForm.addEventListener('submit', function() {
         const submitBtn = this.querySelector('button[type="submit"]');
         const originalBtnContent = submitBtn.innerHTML;
         
-        // Check if form action is still placeholder
-        if (this.action.includes('YOUR_FORM_ID')) {
-            submitBtn.innerHTML = '<span>Form not configured</span>';
-            submitBtn.disabled = true;
-            
-            setTimeout(() => {
-                submitBtn.innerHTML = originalBtnContent;
-                submitBtn.disabled = false;
-            }, 2000);
-            
-            console.warn('Contact form is not configured. Please update the Formspree form ID in index.html');
-            return;
-        }
-        
-        // Show loading state
+        // Show sending state
         submitBtn.innerHTML = '<span>Sending...</span>';
         submitBtn.disabled = true;
         
-        try {
-            const formData = new FormData(this);
-            
-            const response = await fetch(this.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-            
-            if (response.ok) {
-                // Success - show checkmark
-                submitBtn.innerHTML = `
-                    <span>Done</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                `;
-                submitBtn.classList.add('btn--success');
-                
-                // Reset form
-                this.reset();
-                
-                // Reset button after 5 seconds
-                setTimeout(() => {
-                    submitBtn.innerHTML = originalBtnContent;
-                    submitBtn.classList.remove('btn--success');
-                    submitBtn.disabled = false;
-                }, 5000);
-            } else {
-                // Error from Formspree
-                const data = await response.json();
-                throw new Error(data.error || 'Form submission failed');
-            }
-        } catch (error) {
-            console.error('Form submission error:', error);
-            
-            // Show error state
-            submitBtn.innerHTML = '<span>Error - Try again</span>';
-            submitBtn.classList.add('btn--error');
-            
-            setTimeout(() => {
-                submitBtn.innerHTML = originalBtnContent;
-                submitBtn.classList.remove('btn--error');
-                submitBtn.disabled = false;
-            }, 3000);
-        }
+        // Reset after 10 seconds
+        setTimeout(() => {
+            submitBtn.innerHTML = originalBtnContent;
+            submitBtn.disabled = false;
+        }, 10000);
     });
 }
 
