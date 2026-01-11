@@ -171,14 +171,13 @@ animateElements.forEach(el => observer.observe(el));
 // ============================================
 if (contactForm) {
     contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
         const submitBtn = this.querySelector('button[type="submit"]');
         const originalBtnContent = submitBtn.innerHTML;
         
         // Check if form action is still placeholder
         if (this.action.includes('YOUR_FORM_ID')) {
-            e.preventDefault();
-            
-            // Show message that form is not yet configured
             submitBtn.innerHTML = '<span>Form not configured</span>';
             submitBtn.disabled = true;
             
@@ -195,8 +194,54 @@ if (contactForm) {
         submitBtn.innerHTML = '<span>Sending...</span>';
         submitBtn.disabled = true;
         
-        // Form will submit normally to Formspree
-        // For a more custom experience, you could use fetch() here
+        try {
+            const formData = new FormData(this);
+            
+            const response = await fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            if (response.ok) {
+                // Success - show checkmark
+                submitBtn.innerHTML = `
+                    <span>Done</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                `;
+                submitBtn.classList.add('btn--success');
+                
+                // Reset form
+                this.reset();
+                
+                // Reset button after 5 seconds
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalBtnContent;
+                    submitBtn.classList.remove('btn--success');
+                    submitBtn.disabled = false;
+                }, 5000);
+            } else {
+                // Error from Formspree
+                const data = await response.json();
+                throw new Error(data.error || 'Form submission failed');
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            
+            // Show error state
+            submitBtn.innerHTML = '<span>Error - Try again</span>';
+            submitBtn.classList.add('btn--error');
+            
+            setTimeout(() => {
+                submitBtn.innerHTML = originalBtnContent;
+                submitBtn.classList.remove('btn--error');
+                submitBtn.disabled = false;
+            }, 3000);
+        }
     });
 }
 
